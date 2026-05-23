@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuador Invest | Inicio</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Existing Shared CSS -->
+    <link rel="stylesheet" href="style.css?v=2.1">
+
+    <!-- Home specific structure -->
+    <style>
+        .home-hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+        }
+
+        .home-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .home-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            text-align: left;
+            transition: transform 0.4s ease, background 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <div class="pilar-monogram">
+                    <div class="pilar-bar pilar-bar-1"></div>
+                    <div class="pilar-bar pilar-bar-2"></div>
+                    <div class="pilar-bar pilar-bar-3"></div>
+                </div>
+                <span class="logo-text">ECUADOR INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="ia.html" class="nav-link">IA</a></li>
+                <li class="nav-item"><a href="spacex.html" class="nav-link">SpaceX</a></li>
+                <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero section-dark bg-architecture"
+        style="background-image: none; background-color: var(--color-navy);">
+        <div class="hero-bg-overlay"></div>
+        <div class="container fade-in-up">
+            <div class="home-hero-content">
+                <p class="hero-supporting">SOCIOS EN GESTIÓN PATRIMONIAL</p>
+                <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 2rem;">ACCESO
+                    DIRECTO A LOS MERCADOS GLOBALES</h1>
+                <p class="hero-subheadline"
+                    style="max-width: 650px; margin: 0 auto 3rem auto; text-align: center; color: var(--color-muted);">
+                    Soluciones de inversión de clase mundial. Diversifique su capital en acciones, commodities, índices,
+                    divisas y criptomonedas.</p>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <a href="ia.html" class="btn btn-primary">Fondo de IA Premium <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section-charcoal border-top">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Nuestros Mercados</h2>
+            <div class="home-services-grid">
+
+                <div class="service-card fade-in-up delay-1">
+                    <div class="service-icon">✦</div>
+                    <h3 class="step-title">Acciones & Índices</h3>
+                    <p class="step-desc">Tome posición en las empresas más sólidas y los índices bursátiles de mayor
+                        rentabilidad internacional, como el S&P 500 y el Nasdaq.</p>
+                </div>
+
+                <div class="service-card fade-in-up delay-2">
+                    <div class="service-icon">◇</div>
+                    <h3 class="step-title">Materias Primas</h3>
+                    <p class="step-desc">Resguarde su patrimonio con activos tangibles de alto valor y refugio
+                        estructural
+                        como el oro, la plata, el petróleo y demás commodities.</p>
+                </div>
+
+                <div class="service-card fade-in-up delay-3">
+                    <div class="service-icon">⟡</div>
+                    <h3 class="step-title">Divisas & Criptomonedas</h3>
+                    <p class="step-desc">Acceda a la máxima liquidez operando en el mercado de Forex global y participe
+                        en la
+                        revolución financiera a través de los criptoactivos líderes.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTACADA / VALOR IA -->
+    <section class="section-dark bg-circuit border-top"
+        style="padding-bottom: 8rem; min-height: auto; background-image: none; background-color: var(--color-navy);">
+        <div class="container split-section fade-in-up">
+            <div class="split-left">
+                <h2 class="section-title">Una arquitectura de inversión sin fronteras.</h2>
+                <div class="text-block">
+                    <p>En el panorama financiero moderno, depender de un único mercado presenta riesgos
+                        innecesarios. Proveemos a nuestros clientes la infraestructura operativa para acceder
+                        a liquidez global y componer una cartera dinámica y sofisticada.</p>
+                </div>
+                <div class="hero-buttons mt-large">
+                    <a href="ia.html" class="btn btn-secondary">Explorar portafolio de IA</a>
+                </div>
+            </div>
+            <div class="split-right" style="display: flex; align-items: center; justify-content: center;">
+                <div class="elegant-text-block">
+                    <p class="glow-text"
+                        style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-light); line-height: 1.4; text-align: center;">
+                        "La verdadera preservación del capital nace de la precisión institucional y la diversificación
+                        inteligente."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contacto" class="closing-cta section-charcoal border-top text-center" style="padding: 8rem 0;">
+        <div class="container fade-in-up">
+            <h2 class="hero-title" style="font-size: 3rem; margin-bottom: 1.5rem;">Expanda sus fronteras
+                financieras.</h2>
+            <p class="closing-text">Nuestra especialidad es conformar estructuras de valor sostenido a largo plazo.</p>
+            <div class="cta-wrapper mt-large">
+                <a href="ia.html#contacto" class="btn btn-primary" style="margin: 0 auto;">Agendar una consulta <span
+                        class="arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="global-footer section-dark border-top">
+        <div class="container fade-in-up">
+            <div class="footer-contact-grid" style="grid-template-columns: 1fr; justify-items: center; max-width: 400px; margin: 0 auto;">
+                <!-- Ecuador -->
+                <a href="tel:+59327085340" class="contact-card" style="width: 100%; max-width: 300px;">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇪🇨 Ecuador</div>
+                    <div class="contact-number">+593 2 708 5340</div>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">© 2026 Ecuador Invest</div>
+                <div class="footer-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#servicios">Servicios</a>
+                    <a href="ia.html">IA</a>
+                    <a href="spacex.html">SpaceX</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERSECTION OBSERVER SCRIPT -->
+    <script src="main.js"></script>
+</body>
+
+</html>

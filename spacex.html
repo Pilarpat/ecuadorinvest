@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuador Invest | SpaceX IPO</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <meta name="description"
+        content="El IPO más grande de la historia: La apertura de SpaceX. Acceso institucional a través de Ecuador Invest.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2.1">
+
+    <style>
+        /* SPACEX SPECIFIC OVERRIDES */
+        .hero-spacex {
+            background: #000000;
+            position: relative;
+        }
+
+        .hero-spacex::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .spacex-logo-anim {
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+            animation: floatSpaceX 6s ease-in-out infinite;
+        }
+
+        .mobile-only-logo {
+            display: none !important;
+        }
+
+        @media (max-width: 900px) {
+            .mobile-only-logo {
+                display: flex !important;
+                margin: 3.5rem 0 !important;
+            }
+
+            .desktop-only-logo {
+                display: none !important;
+            }
+        }
+
+        @keyframes floatSpaceX {
+            0% {
+                transform: translateY(0);
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+            }
+
+            50% {
+                transform: translateY(-15px);
+                filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.7));
+            }
+
+            100% {
+                transform: translateY(0);
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+            }
+        }
+
+        .thesis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media(max-width: 900px) {
+            .thesis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .thesis-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .thesis-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .thesis-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        }
+
+        /* ROCKET ANIMATION */
+        .rocket-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+        }
+
+        /* ROCKET ANIMATION & COUNTDOWN */
+        .col-visual.desktop-only-logo {
+            align-items: flex-end !important; /* Align bottom */
+        }
+        
+        .hero-spacex .hero-grid {
+            align-items: flex-end;
+        }
+
+        .rocket-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .countdown-wrapper {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            z-index: 20;
+            position: relative;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            min-width: 80px;
+            backdrop-filter: blur(5px);
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-muted);
+        }
+
+        .rocket-video {
+            width: 500px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            z-index: 10;
+            mix-blend-mode: screen;
+            object-fit: cover;
+            mask-image: radial-gradient(circle, black 40%, transparent 70%);
+            -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
+        }
+        
+        @media (max-width: 900px) {
+            .countdown-wrapper {
+                gap: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.5rem;
+            }
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+            .rocket-video {
+                width: 100%;
+            }
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--color-charcoal);
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: floatWhatsApp 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: var(--color-navy);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            color: #fff;
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        @keyframes floatWhatsApp {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 52px; /* Aligned with button center vertically */
+            right: 110px; /* To the left of the button */
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 999;
+            pointer-events: none;
+            opacity: 1;
+            /* Fade out entirely after 5s and animation points right repeatedly */
+            animation: pointRight 1s infinite alternate, fadeOutTooltip 0.5s ease-in 5s forwards;
+        }
+
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -6px;
+            transform: translateY(-50%);
+            border-width: 6px 0 6px 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes pointRight {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+
+        @keyframes fadeOutTooltip {
+            0% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes goldPulse {
+            0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.2); }
+            50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.4); }
+            100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.2); }
+        }
+
+        @keyframes scanXray {
+            0% { 
+                --scan-y: 10%; 
+                --scan-x: 50%;
+            }
+            50% { 
+                --scan-y: 90%; 
+                --scan-x: 50%;
+            }
+            100% { 
+                --scan-y: 10%; 
+                --scan-x: 50%;
+            }
+        }
+        
+        @property --scan-y {
+          syntax: '<percentage>';
+          inherits: false;
+          initial-value: 10%;
+        }
+
+        @property --scan-x {
+          syntax: '<percentage>';
+          inherits: false;
+          initial-value: 50%;
+        }
+
+        .xray-auto-scan {
+            animation: scanXray 8s ease-in-out infinite;
+        }
+
+        @media (max-width: 900px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float svg {
+                width: 26px;
+                height: 26px;
+            }
+            .whatsapp-tooltip {
+                bottom: 30px;
+                right: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <div class="pilar-monogram">
+                    <div class="pilar-bar pilar-bar-1"></div>
+                    <div class="pilar-bar pilar-bar-2"></div>
+                    <div class="pilar-bar pilar-bar-3"></div>
+                </div>
+                <span class="logo-text">ECUADOR INVEST</span>
+            </a>
+            <div class="menu-toggle">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#contexto" class="nav-link">Contexto</a></li>
+                <li class="nav-item"><a href="#fundamentos" class="nav-link">Fundamentos</a></li>
+                <li class="nav-item"><a href="#ventaja" class="nav-link">Ventaja</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section id="hero" class="hero section-dark hero-spacex">
+        <div class="container two-column-grid hero-grid" style="position:relative; z-index:2;">
+            <div class="hero-text fade-in-up">
+                <p class="hero-supporting">SpaceX sale a bolsa</p>
+                <h1 class="hero-title" style="font-size:3.2rem; line-height: 1.2;">LA IPO MÁS GRANDE DE LA HISTORIA<br>YA TIENE FECHA.</h1>
+                <p class="hero-subheadline">Mientras el público espera, los gigantes de Wall Street ya están tomando posiciones. Accede antes con Ecuador Invest.</p>
+
+                <!-- Mobile Only Video & Countdown -->
+                <div class="mobile-only-logo fade-in-up delay-1" style="align-items: center; justify-content: center;">
+                    <div class="rocket-logo-container">
+                        <div class="countdown-wrapper" id="countdown-mobile">
+                            <div class="countdown-item"><span class="countdown-value" id="days-mobile">00</span><span class="countdown-label">Días</span></div>
+                            <div class="countdown-item"><span class="countdown-value" id="hours-mobile">00</span><span class="countdown-label">Horas</span></div>
+                            <div class="countdown-item"><span class="countdown-value" id="minutes-mobile">00</span><span class="countdown-label">Minutos</span></div>
+                            <div class="countdown-item"><span class="countdown-value" id="seconds-mobile">00</span><span class="countdown-label">Segundos</span></div>
+                        </div>
+                        <video class="rocket-video" style="margin-bottom: 0;" autoplay loop muted playsinline>
+                            <source src="rocket_video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#closing" class="btn-primary">Solicitar asesoramiento confidencial</a>
+                </div>
+            </div>
+            <div class="col-visual desktop-only-logo fade-in-up delay-1"
+                style="display: flex; align-items: flex-end; justify-content: center;">
+                <div class="rocket-logo-container">
+                    <div class="countdown-wrapper" id="countdown-desktop">
+                        <div class="countdown-item"><span class="countdown-value" id="days-desktop">00</span><span class="countdown-label">Días</span></div>
+                        <div class="countdown-item"><span class="countdown-value" id="hours-desktop">00</span><span class="countdown-label">Horas</span></div>
+                        <div class="countdown-item"><span class="countdown-value" id="minutes-desktop">00</span><span class="countdown-label">Minutos</span></div>
+                        <div class="countdown-item"><span class="countdown-value" id="seconds-desktop">00</span><span class="countdown-label">Segundos</span></div>
+                    </div>
+                    <video class="rocket-video" style="width: 500px; margin-bottom: 0;" autoplay loop muted playsinline>
+                        <source src="rocket_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1.5: OPORTUNIDAD UNICA -->
+    <section id="oportunidad" class="context section-black-gradient text-center border-top">
+        <div class="container container-medium fade-in-up">
+            <h2 class="section-title">Oportunidad única.</h2>
+            <div class="context-text-block">
+                <p>El próximo 12 de junio, SpaceX realizará su salida a bolsa (IPO). Esto significa que, a partir de ese día, las acciones de la compañía estarán disponibles para el público.</p>
+                <p>Históricamente, invertir desde el primer día en un gigante tecnológico ha representado una oportunidad de crecimiento única.</p>
+                <p class="text-emphasis" style="margin-bottom: 3rem;">La clave del éxito siempre está en asegurar el lugar y entrar temprano.</p>
+                <p>Para entender el verdadero potencial de invertir en una salida a bolsa, la historia es el mejor ejemplo. A continuación, le mostramos en cuánto se habrían convertido hoy <span style="color: #ffffff; font-weight: 600;">$1,000 dólares invertidos</span> el día exacto en que estas empresas salieron al mercado:</p>
+            </div>
+
+            <!-- TABLA DE RENDIMIENTO -->
+            <div class="performance-list" style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+                
+                <div class="table-headers" style="display: flex; justify-content: space-between; padding: 0 1.5rem; margin-bottom: 1rem; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                    <div>Compañía <span style="opacity: 0.5; margin-left:0.5rem;">(IPO)</span></div>
+                    <div>Valor actual</div>
+                </div>
+
+                <div class="perf-row stagger-fade">
+                    <div class="perf-company">
+                        <div class="perf-logo">
+                            <svg viewBox="0 0 24 24" width="22" height="22" class="anim-logo tsla-pulse">
+                                <path fill="#e82127" d="M12 5.362l2.475-3.026s4.245.09 8.471 2.054c-1.082 1.636-3.231 2.438-3.231 2.438-.146-1.439-1.154-1.79-4.354-1.79L12 24 8.619 5.034c-3.18 0-4.188.354-4.335 1.792 0 0-2.146-.795-3.229-2.43C5.28 2.431 9.525 2.34 9.525 2.34L12 5.362l-.004.002H12v-.002zm0-3.899c3.415-.03 7.326.528 11.328 2.28.535-.968.672-1.395.672-1.395C19.625.612 15.528.015 12 0 8.472.015 4.375.61 0 2.349c0 0 .195.525.672 1.396C4.674 1.989 8.585 1.435 12 1.46v.003z"/>
+                            </svg>
+                        </div>
+                        <div class="perf-name-block">
+                            <h4 class="perf-name">Tesla (2010)</h4>
+                            <span class="perf-ticker">TSLA</span>
+                        </div>
+                    </div>
+                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
+                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="368700" data-comma="true">0</span>
+                    </div>
+                </div>
+
+                <div class="perf-row stagger-fade delay-1">
+                    <div class="perf-company">
+                        <div class="perf-logo">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                                <path d="M17.8 14.5c.1-3 2.4-4.3 2.5-4.4-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.7 1.1-1 0-2.5-1.1-4.1-1-2.1 0-4.1 1.2-5.1 3.1-2.2 3.8-.6 9.4 1.5 12.4 1 1.5 2.2 3.1 3.8 3.1 1.5 0 2.1-1 3.9-1 1.8 0 2.3 1 3.9 1 1.6 0 2.7-1.5 3.7-3 .1-.2.2-.4.4-.7-1.7-.8-2.9-2.5-2.8-4.6zM15 5.5c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.6 1.8-.7.8-1.4 2.2-1.2 3.6 1.3.1 2.8-.6 3.6-1.6z"/>
+                            </svg>
+                        </div>
+                        <div class="perf-name-block">
+                            <h4 class="perf-name">Apple (1980)</h4>
+                            <span class="perf-ticker">AAPL</span>
+                        </div>
+                    </div>
+                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
+                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="3105900" data-comma="true">0</span>
+                    </div>
+                </div>
+
+                <div class="perf-row stagger-fade delay-2">
+                    <div class="perf-company">
+                        <div class="perf-logo" style="display:flex; align-items:center; justify-content:center; width:26px; height:26px; background-color: #000; border-radius: 4px;">
+                            <svg viewBox="0 0 100 100" width="22" height="22">
+                                <path fill="#ffffff" d="M60.2,56.5c-4.4,2.7-10.4,4.2-15.6,4.2c-5.5,0-8.9-1.3-11.4-3.5c-2.4-2.1-3.6-5.1-3.6-8.5 c0-7.8,6.8-12.2,18-12.2c4.4,0,8.2,1,10.6,2.2v-1.7c0-3.3-0.8-5.9-2.3-7.7c-2.1-2.4-5.6-3.8-10.1-3.8c-4.2,0-8.7,1.1-12.7,3.1 l-2.6-7.1c4.5-2.6,10.9-4,16.5-4c7.6,0,13.2,1.9,16.7,5.7c3.4,3.7,5,9,5,16.2v14.4c0,3.3,0.3,5.8,0.9,7.6h-7.6 C60.8,59.9,60.5,58,60.2,56.5z M59.6,43.2c-2.1-1.1-5.1-1.9-8.7-1.9c-6.8,0-10.4,2.3-10.4,6.7c0,2.1,0.8,3.9,2.4,5.1 c1.6,1.2,4.1,1.8,7.3,1.8c4.3,0,7.9-1.2,9.4-2.8V43.2z"/>
+                                <path fill="#FF9900" d="M12.9,75.4c12.2,8.9,27.5,13.6,43.5,13.6c16.2,0,32.3-5.2,45.4-14.6c2.7-1.9,3.7-6.2,1.9-9.4 c-2-3.1-6-3.9-9.1-1.9c-10.9,7.3-24.1,11.3-37.5,11.3c-13.1,0-25.9-3.7-36.4-10.9c-3.1-2.1-7.2-1.3-9.1,1.9 C9.7,68.4,10.7,72.6,12.9,75.4z"/>
+                                <path fill="#FF9900" d="M96.7,58.8c0.6-0.3,1.4-0.1,1.8,0.5l4.3,6.8c1,1.6,0.5,3.6-0.8,4.6c-6.2,4.8-13.3,8.4-21.4,10.7 c-2.6,0.7-5.1-1.2-5.5-3.8l-1.3-10.7c-0.3-2.6,1.4-4.8,3.9-4.8c1.3,0,2.5,0.4,3.5,0.9c3.9,1.7,7.7,3.3,11.2,4.7l1.4-2.3 C95.3,63,95.5,60.1,96.7,58.8z"/>
+                            </svg>
+                        </div>
+                        <div class="perf-name-block">
+                            <h4 class="perf-name">Amazon (1997)</h4>
+                            <span class="perf-ticker">AMZN</span>
+                        </div>
+                    </div>
+                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
+                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="3579400" data-comma="true">0</span>
+                    </div>
+                </div>
+
+                <div class="perf-row stagger-fade delay-3">
+                    <div class="perf-company">
+                        <div class="perf-logo">
+                            <svg viewBox="0 0 24 24" width="24" height="24" class="anim-logo ms-logo">
+                                <rect x="3" y="3" width="8" height="8" fill="#f25022"/>
+                                <rect x="13" y="3" width="8" height="8" fill="#7fba00"/>
+                                <rect x="3" y="13" width="8" height="8" fill="#00a4ef"/>
+                                <rect x="13" y="13" width="8" height="8" fill="#ffb900"/>
+                            </svg>
+                        </div>
+                        <div class="perf-name-block">
+                            <h4 class="perf-name">Microsoft (1986)</h4>
+                            <span class="perf-ticker">MSFT</span>
+                        </div>
+                    </div>
+                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
+                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="5748800" data-comma="true">0</span>
+                    </div>
+                </div>
+
+                <div class="perf-row stagger-fade delay-4">
+                    <div class="perf-company">
+                        <div class="perf-logo">
+                            <svg viewBox="0 0 24 24" width="26" height="26" class="anim-logo brand-pulse">
+                                <path fill="#76b900" d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/>
+                            </svg>
+                        </div>
+                        <div class="perf-name-block">
+                            <h4 class="perf-name">Nvidia (1999)</h4>
+                            <span class="perf-ticker">NVDA</span>
+                        </div>
+                    </div>
+                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
+                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="8780400" data-comma="true">0</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2.5: NO SE TRATA DE COHETES (X-RAY) -->
+    <section id="verdadera-oportunidad" class="context section-dark border-top" style="overflow: hidden;">
+        <div class="container container-medium fade-in-up">
+            <div class="two-column-grid" style="align-items: center; gap: 4rem;">
+                
+                <!-- Columna Izquierda: Efecto Rayos X -->
+                <div class="xray-container" id="xray-container" style="position: relative; width: 100%; height: 70vh; min-height: 500px; display: flex; align-items: center; justify-content: center;">
+                    <!-- Base Image -->
+                    <img src="image_6.jpg" class="xray-base-image" alt="SpaceX Rocket" style="position: absolute; height: 100%; width: auto; max-width: 100%; object-fit: contain; z-index: 1;">
+                    
+                    <!-- X-Ray Hidden Internal Circuitry -->
+                    <div class="xray-internal xray-auto-scan" style="position: absolute; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; z-index: 2; -webkit-mask-image: radial-gradient(circle 120px at var(--scan-x, 50%) var(--scan-y, 50%), black 40%, transparent 100%); mask-image: radial-gradient(circle 120px at var(--scan-x, 50%) var(--scan-y, 50%), black 40%, transparent 100%);">
+                        <!-- We use CSS filters to simulate glowing white/silver circuits from the same silhouette -->
+                        <img src="image_6.jpg" alt="AI Circuits XRay" style="height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: sepia(0.2) saturate(0) brightness(1.8) contrast(1.5) drop-shadow(0 0 15px rgba(255,255,255,0.8));">
+                        
+                        <!-- Extra data nodes overlay -->
+                        <div style="position: absolute; inset: 0; background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 15px 15px; opacity: 0.15; mix-blend-mode: overlay; pointer-events: none;"></div>
+                    </div>
+
+                    <!-- Glow Flashlight -->
+                    <div class="xray-flashlight xray-auto-scan" style="position: absolute; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%); top: var(--scan-y, 50%); left: var(--scan-x, 50%); transform: translate(-50%, -50%); pointer-events: none; z-index: 3; mix-blend-mode: screen; opacity: 1;"></div>
+                </div>
+
+                <!-- Columna Derecha: Texto -->
+                <div class="context-text-block text-left" style="max-width: 500px;">
+                    <h2 class="section-title" style="font-size: 3rem; margin-bottom: 2rem; color: #fff; text-align: left;">No se trata de cohetes.</h2>
+                    <p style="color: var(--color-gray); margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">Si crees que esta IPO se trata de lanzar cohetes a Marte o de internet satelital, te estás perdiendo la verdadera oportunidad. En realidad, SpaceX es la pieza clave del plan de Inteligencia Artificial de Elon Musk.</p>
+                    <p style="color: var(--color-gray); margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.6;">Al unir su tecnología espacial con su nueva empresa de IA (xAI), Musk busca dominar esta industria a nivel mundial. Los analistas calculan que este movimiento generará una riqueza histórica de <span class="gold-pulse-text" style="color: #ffd700; font-weight: 700; display: inline-block; animation: goldPulse 3s infinite;">1.000 billones de dólares</span>.</p>
+                    <p class="text-emphasis" style="font-style: italic; border-left: 3px solid #ffd700; padding-left: 1rem; color: #fff; font-size: 1.2rem;">Para ponerlo en perspectiva: es dinero suficiente para hacer millonario a cada habitante del continente.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CONTEXTO FINANCIERO -->
+    <section id="contexto" class="context section-charcoal text-center border-top">
+        <div class="container container-medium fade-in-up">
+            <h2 class="section-title">Un Evento de Liquidez<br>Sin Precedentes.</h2>
+            <div class="context-text-block">
+                <p>En abril de 2026, SpaceX presentó de manera confidencial su solicitud para una Oferta Pública Inicial
+                    (IPO), proyectada para salir al mercado entre junio y julio.</p>
+                <p>Con una valuación objetivo estimada en <span class="text-highlight">1,75 billones de dólares (USD
+                        1.75 Trillion)</span> y una meta de recaudación histórica de hasta <strong>$75.000
+                        millones</strong>, este evento está diseñado para eclipsar el récord mundial establecido por
+                    Saudi Aramco.</p>
+                <p class="text-emphasis">No nos encontramos simplemente ante la salida a bolsa de una empresa de
+                    cohetes; estamos presenciando la consolidación comercial del espacio como la próxima gran frontera
+                    económica y tecnológica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2.5: RENTABILIDAD EN UN SOLO DÍA -->
+    <section id="profitability" class="performance section-black-gradient border-top">
+        <div class="container split-section fade-in-up">
+            <div class="split-left">
+                <h2 class="section-title">Rentabilidad en un solo día.</h2>
+                <div class="text-block">
+                    <p>Históricamente los IPOs (Oferta Pública Inicial), especialmente los del sector tecnológico en
+                        NASDAQ, suelen experimentar un alza promedio que ronda entre el 15% y el 20% durante su primer
+                        día de cotización respecto a su precio de oferta.</p>
+                    <p>Este salto está fuertemente impulsado por el hype, la atención mediática y la demanda del
+                        inversor minorista.</p>
+                    <p>En la última década las salidas a bolsa más importantes fueron las de Airbnb, Uber, Rivian y ARN,
+                        aunque entre todas juntas no llegan a la valuación esperada para SpaceX que podría convertirse
+                        en la mayor salida a bolsa de la historia.</p>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="large-typography-wrap">
+                    <span class="large-number" data-target="16.4" data-comma="true">16,4<span
+                            class="percent">%</span></span>
+                    <span class="large-label">Retorno histórico en el día de salida a bolsa, teniendo en cuenta las
+                        empresas que salieron a cotizar en Nasdaq durante los últimos 10 años.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: TESIS DE INVERSION / FUNDAMENTOS -->
+    <section id="fundamentos" class="strategy section-black-gradient border-top">
+        <div class="container fade-in-up">
+            <h2 class="section-title text-center">Más que Exploración:<br>Un Conglomerado Tecnológico Dominante.</h2>
+            <div class="text-block text-center" style="max-width:800px; margin: 0 auto; color: var(--color-gray);">
+                <p>El capital inteligente no invierte en promesas; invierte en infraestructura y monopolios de facto.
+                    Con beneficios reportados de aproximadamente $8.000 millones sobre ingresos de $15.500 millones en
+                    el último ejercicio, SpaceX ha demostrado una rentabilidad sólida fundamentada en tres pilares:</p>
+            </div>
+
+            <div class="thesis-grid">
+                <!-- Pillar 1 -->
+                <div class="thesis-card stagger-fade">
+                    <div class="thesis-icon">🚀</div>
+                    <h3 class="principle-title" style="margin-bottom:0.5rem; border-bottom: none; padding-bottom: 0;">
+                        Dominio Logístico</h3>
+                    <p
+                        style="font-size:0.85em; color:var(--color-muted); margin-bottom:1rem; font-family:'Inter', sans-serif;">
+                        (Starship y Falcon)</p>
+                    <p class="principle-text" style="color:var(--color-gray)">El monopolio virtual en lanzamientos
+                        comerciales e institucionales, siendo el socio estratégico indispensable para la NASA, el
+                        Pentágono y la naciente economía lunar.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="thesis-card stagger-fade delay-1">
+                    <div class="thesis-icon">🛰️</div>
+                    <h3 class="principle-title" style="margin-bottom:0.5rem; border-bottom: none; padding-bottom: 0;">
+                        Red Global</h3>
+                    <p
+                        style="font-size:0.85em; color:var(--color-muted); margin-bottom:1rem; font-family:'Inter', sans-serif;">
+                        (Starlink)</p>
+                    <p class="principle-text" style="color:var(--color-gray)">La constelación de internet satelital de
+                        mayor crecimiento en el mundo, que hoy representa la principal arteria de flujo de caja de la
+                        compañía.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="thesis-card stagger-fade delay-2">
+                    <div class="thesis-icon">🧠</div>
+                    <h3 class="principle-title" style="margin-bottom:0.5rem; border-bottom: none; padding-bottom: 0;">
+                        Nexo con IA</h3>
+                    <p
+                        style="font-size:0.85em; color:var(--color-muted); margin-bottom:1rem; font-family:'Inter', sans-serif;">
+                        (xAI)</p>
+                    <p class="principle-text" style="color:var(--color-gray)">Tras su reciente fusión con la firma xAI,
+                        SpaceX no solo domina el espacio, sino que planea desplegar centros de datos orbitales
+                        impulsados por energía solar. Una convergencia histórica entre procesamiento (IA) y conectividad
+                        sin latencia a nivel global.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: VENTAJA COMPETITIVA -->
+    <section id="ventaja" class="approach section-charcoal border-top">
+        <div class="container two-column-grid">
+            <div class="col-text fade-in-up">
+                <h2 class="section-title">Ejecución Institucional.<br>Acceso Privilegiado.</h2>
+                <div class="text-block">
+                    <p>Un evento de esta magnitud genera un <i>hype</i> desmesurado en el mercado minorista. Mientras el
+                        inversor tradicional espera el toque de campana, expuesto a la volatilidad extrema y la
+                        especulación de los primeros días de cotización, el patrimonio sofisticado requiere
+                        anticipación.</p>
+                    <p>A través de la <span class="text-highlight">Plataforma Azul</span>, Ecuador Invest estructura
+                        el canal adecuado y regulado en Estados Unidos para que usted participe de este hito.</p>
+                    <p class="text-emphasis">Le ofrecemos la arquitectura financiera necesaria para posicionar su
+                        capital con la discreción, la seguridad institucional y la visión a largo plazo que su
+                        portafolio exige.</p>
+                </div>
+            </div>
+            <div class="col-visual fade-in-up delay-1">
+                <!-- Phone Mockup showing Azul -->
+                <div class="phone-mockup-container">
+                    <div class="phone-image-wrapper">
+                        <div class="phone-parallax-target">
+                            <img src="phone-mockup.png" alt="Ecuador Invest App Interface" class="phone-image">
+                            <div class="logo-invest-cover"></div>
+                            <div class="phone-reflection"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FORMULARIO -->
+    <section id="closing" class="closing section-navy text-center border-top" style="padding: 6rem 0;">
+        <div class="container fade-in-up">
+            <h2 class="section-title">Obtenga más información.</h2>
+            <p class="closing-text">Complete el siguiente formulario. Un asesor privado evaluará su perfil y se
+                comunicará de manera confidencial para brindarle toda la información sobre el acceso a esta oportunidad
+                de inversión.</p>
+
+            <div class="form-container">
+                <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com"
+                    method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre y Apellido</label>
+                        <input type="text" id="name" name="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <div class="phone-input-group">
+                            <select id="country-code" name="codigo_pais" required class="country-select">
+                                <option value="+54">🇦🇷 +54</option>
+                                <option value="+598">🇺🇾 +598</option>
+                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+55">🇧🇷 +55</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+57">🇨🇴 +57</option>
+                                <option value="+51">🇵🇪 +51</option>
+                                <option value="+595">🇵🇾 +595</option>
+                                <option value="+591">🇧🇴 +591</option>
+                                <option value="+52">🇲🇽 +52</option>
+                                <option value="+593" selected>🇪🇨 +593</option>
+                            </select>
+                            <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678"
+                                class="phone-input-field">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="mensaje" rows="4" required
+                            placeholder="Quisiera recibir una asignación para el IPO de SpaceX..."></textarea>
+                    </div>
+
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com">
+                    <input type="hidden" name="_subject" value="Nuevo Prospecto de Ecuador Invest - SpaceX">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <button type="submit" class="btn-primary form-submit-btn">
+                        <span class="btn-text">Enviar solicitud</span>
+                        <span class="spinner" style="display: none;">⟳</span>
+                    </button>
+
+                    <div class="form-error" style="display: none; color: #e82127; margin-top: 1rem; font-size: 0.9rem;">
+                        Hubo un error al enviar el formulario. Inténtelo nuevamente o contáctenos directamente.</div>
+                </form>
+
+                <div id="form-success" class="form-success-card">
+                    <div class="success-icon">✦</div>
+                    <h3 style="margin-bottom: 1rem;">Solicitud enviada con éxito</h3>
+                    <p style="color: var(--color-muted); line-height: 1.6;">Gracias por contactarse con nosotros. Un
+                        asesor privado revisará su solicitud institucional y nos comunicaremos con usted a la brevedad
+                        para estructurar su acceso confidencial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer section-dark">
+        <div class="container fade-in-up">
+            <div class="footer-contact-grid" style="grid-template-columns: 1fr; justify-items: center; max-width: 400px; margin: 0 auto;">
+                <!-- Ecuador -->
+                <a href="tel:+59327085340" class="contact-card" style="width: 100%; max-width: 300px;">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <div class="contact-country">🇪🇨 Ecuador</div>
+                    <div class="contact-number">+593 2 708 5340</div>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">Ecuador Invest</div>
+                <div class="footer-links" style="display:flex;">
+                    <span style="color:var(--color-gray);">Acceso Institucional</span>
+                    <span style="color:var(--color-gray); margin:0 1rem;">•</span>
+                    <span style="color:var(--color-gray);">Dominio Aeroespacial</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-tooltip">CONSULTA AHORA <span style="font-size: 1.1em; line-height: 1;">&rarr;</span></div>
+    <a href="https://wa.me/59327085340" class="whatsapp-float" target="_blank" aria-label="Contáctenos por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.03c0 2.127.553 4.195 1.603 6.012L.15 23.315l5.413-1.42C7.324 22.887 9.646 23.444 12.031 23.444c6.645 0 12.031-5.386 12.031-12.031S18.677 0 12.031 0zm0 21.488c-1.802 0-3.568-.485-5.116-1.404l-.367-.217-3.8.997.997-3.805-.238-.378c-1.012-1.604-1.545-3.468-1.545-5.395 0-5.568 4.53-10.098 10.098-10.098s10.098 4.53 10.098 10.098-4.53 10.098-10.098 10.098zm5.542-7.575c-.304-.152-1.797-.887-2.076-.988-.278-.101-.481-.152-.684.152-.202.304-.785.988-.962 1.19-.177.203-.354.228-.658.076-2.03-.984-3.51-2.05-4.887-4.425-.177-.304-.02-.468.132-.62.137-.137.304-.354.456-.532.152-.177.202-.304.304-.506.101-.202.05-.38-.026-.532-.076-.152-.684-1.645-.937-2.253-.247-.594-.498-.513-.684-.522-.177-.01-.38-.01-.582-.01-.203 0-.532.076-.81.38-.278.304-1.064 1.038-1.064 2.532s1.089 2.937 1.24 3.14c.152.203 2.14 3.267 5.18 4.508 1.942.793 2.684.858 3.593.722.91-.137 2.937-1.2 3.342-2.362.405-1.162.405-2.155.284-2.363-.12-.208-.43-.335-.734-.487z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script>
+        // COUNTDOWN TIMER LOGIC
+        function initCountdown() {
+            const targetDate = new Date('June 12, 2026 00:00:00').getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance < 0) return;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const timeStrs = {
+                    days: String(days).padStart(2, '0'),
+                    hours: String(hours).padStart(2, '0'),
+                    minutes: String(minutes).padStart(2, '0'),
+                    seconds: String(seconds).padStart(2, '0')
+                };
+
+                // Update Desktop
+                document.getElementById('days-desktop').innerText = timeStrs.days;
+                document.getElementById('hours-desktop').innerText = timeStrs.hours;
+                document.getElementById('minutes-desktop').innerText = timeStrs.minutes;
+                document.getElementById('seconds-desktop').innerText = timeStrs.seconds;
+
+                // Update Mobile
+                document.getElementById('days-mobile').innerText = timeStrs.days;
+                document.getElementById('hours-mobile').innerText = timeStrs.hours;
+                document.getElementById('minutes-mobile').innerText = timeStrs.minutes;
+                document.getElementById('seconds-mobile').innerText = timeStrs.seconds;
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', initCountdown);
+    </script>
+</body>
+
+</html>
