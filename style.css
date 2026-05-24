@@ -1325,6 +1325,11 @@ body.no-scroll {
 /* Responsive adjustments */
 @media (max-width: 992px) {
 
+    .mobile-reverse {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
     .four-column-grid,
     .two-column-grid,
     .split-section {
