@@ -261,8 +261,8 @@
             z-index: 999;
             pointer-events: none;
             opacity: 1;
-            /* Fade out entirely after 5s and animation points right repeatedly */
-            animation: pointRight 1s infinite alternate, fadeOutTooltip 0.5s ease-in 5s forwards;
+            /* Fade out entirely after 10s and animation points right repeatedly */
+            animation: pointRight 1s infinite alternate, fadeOutTooltip 0.5s ease-in 10s forwards;
         }
 
         .whatsapp-tooltip::after {
@@ -409,26 +409,32 @@
         </div>
     </section>
 
+    <!-- LUNAR IMAGE TRANSITION -->
+    <div style="width: 100%; height: 35vh; min-height: 250px; background: url('luna.jpg') center 60% / cover no-repeat; position: relative; margin-top: -5vh; z-index: 10;">
+        <!-- Gradient to blend the bottom of the image seamlessly into the section below -->
+        <div style="position: absolute; bottom: -1px; left: 0; width: 100%; height: 120px; background: linear-gradient(to bottom, transparent 0%, rgba(240,240,240,0.8) 50%, #f0f0f0 100%);"></div>
+    </div>
+
     <!-- SECTION 1.5: OPORTUNIDAD UNICA -->
-    <section id="oportunidad" class="context section-black-gradient text-center border-top">
-        <div class="container container-medium fade-in-up">
-            <h2 class="section-title">Oportunidad única.</h2>
-            <div class="context-text-block">
+    <section id="oportunidad" class="context text-center" style="background-color: #f0f0f0; margin-top: -3rem; padding-top: 0; padding-bottom: 5rem; position: relative; z-index: 11;">
+        <div class="container container-medium fade-in-up" style="position: relative; z-index: 2;">
+            <h2 class="section-title" style="color: #000000; font-weight: 800; text-shadow: 0 2px 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,1);">Oportunidad única.</h2>
+            <div class="context-text-block" style="color: #111111; font-weight: 500; text-shadow: 0 1px 3px rgba(255,255,255,0.8), 0 0 15px rgba(255,255,255,0.9);">
                 <p>El próximo 12 de junio, SpaceX realizará su salida a bolsa (IPO). Esto significa que, a partir de ese día, las acciones de la compañía estarán disponibles para el público.</p>
                 <p>Históricamente, invertir desde el primer día en un gigante tecnológico ha representado una oportunidad de crecimiento única.</p>
-                <p class="text-emphasis" style="margin-bottom: 3rem;">La clave del éxito siempre está en asegurar el lugar y entrar temprano.</p>
-                <p>Para entender el verdadero potencial de invertir en una salida a bolsa, la historia es el mejor ejemplo. A continuación, le mostramos en cuánto se habrían convertido hoy <span style="color: #ffffff; font-weight: 600;">$1,000 dólares invertidos</span> el día exacto en que estas empresas salieron al mercado:</p>
+                <p class="text-emphasis" style="margin-bottom: 3rem; color: #000000; font-weight: 800;">La clave del éxito siempre está en asegurar el lugar y entrar temprano.</p>
+                <p>Para entender el verdadero potencial de invertir en una salida a bolsa, la historia es el mejor ejemplo. A continuación, te mostramos en cuánto se habrían convertido hoy <span style="color: #000000; font-weight: 900;">$1,000 dólares invertidos</span> el día exacto en que estas empresas salieron al mercado. Por ejemplo, quien invirtió $1,000 dólares en Tesla en el año 2010 tiene hoy <span style="color: #000000; font-weight: 900;">$368,700 dólares</span>:</p>
             </div>
 
             <!-- TABLA DE RENDIMIENTO -->
-            <div class="performance-list" style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="performance-list" style="margin-top: 4rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 16px; padding: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3), inset 0 0 0 2px rgba(255,255,255,0.8);">
                 
-                <div class="table-headers" style="display: flex; justify-content: space-between; padding: 0 1.5rem; margin-bottom: 1rem; color: var(--color-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                <div class="table-headers" style="display: flex; justify-content: space-between; padding: 0 1.5rem; margin-bottom: 1rem; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
                     <div>Compañía <span style="opacity: 0.5; margin-left:0.5rem;">(IPO)</span></div>
                     <div>Valor actual</div>
                 </div>
 
-                <div class="perf-row stagger-fade">
+                <div class="perf-row stagger-fade" style="border-bottom: 1px solid #eaeaea;">
                     <div class="perf-company">
                         <div class="perf-logo">
                             <svg viewBox="0 0 24 24" width="22" height="22" class="anim-logo tsla-pulse">
@@ -436,52 +442,52 @@
                             </svg>
                         </div>
                         <div class="perf-name-block">
-                            <h4 class="perf-name">Tesla (2010)</h4>
-                            <span class="perf-ticker">TSLA</span>
+                            <h4 class="perf-name" style="color: #000;">Tesla (2010)</h4>
+                            <span class="perf-ticker" style="color: #666;">TSLA</span>
                         </div>
                     </div>
-                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
-                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="368700" data-comma="true">0</span>
+                    <div class="perf-value positive" style="font-weight: 700; font-size: 1.2rem; color: #10b981;">
+                        <span class="perf-prefix" style="color:#10b981">$</span><span class="perf-number" data-target="368700" data-comma="true">0</span>
                     </div>
                 </div>
 
-                <div class="perf-row stagger-fade delay-1">
+                <div class="perf-row stagger-fade delay-1" style="border-bottom: 1px solid #eaeaea;">
                     <div class="perf-company">
                         <div class="perf-logo">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff">
                                 <path d="M17.8 14.5c.1-3 2.4-4.3 2.5-4.4-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.7 1.1-1 0-2.5-1.1-4.1-1-2.1 0-4.1 1.2-5.1 3.1-2.2 3.8-.6 9.4 1.5 12.4 1 1.5 2.2 3.1 3.8 3.1 1.5 0 2.1-1 3.9-1 1.8 0 2.3 1 3.9 1 1.6 0 2.7-1.5 3.7-3 .1-.2.2-.4.4-.7-1.7-.8-2.9-2.5-2.8-4.6zM15 5.5c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.6 1.8-.7.8-1.4 2.2-1.2 3.6 1.3.1 2.8-.6 3.6-1.6z"/>
                             </svg>
                         </div>
                         <div class="perf-name-block">
-                            <h4 class="perf-name">Apple (1980)</h4>
-                            <span class="perf-ticker">AAPL</span>
+                            <h4 class="perf-name" style="color: #000;">Apple (1980)</h4>
+                            <span class="perf-ticker" style="color: #666;">AAPL</span>
                         </div>
                     </div>
-                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
-                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="3105900" data-comma="true">0</span>
+                    <div class="perf-value positive" style="font-weight: 700; font-size: 1.2rem; color: #10b981;">
+                        <span class="perf-prefix" style="color:#10b981">$</span><span class="perf-number" data-target="3105900" data-comma="true">0</span>
                     </div>
                 </div>
 
-                <div class="perf-row stagger-fade delay-2">
+                <div class="perf-row stagger-fade delay-2" style="border-bottom: 1px solid #eaeaea;">
                     <div class="perf-company">
-                        <div class="perf-logo" style="display:flex; align-items:center; justify-content:center; width:26px; height:26px; background-color: #000; border-radius: 4px;">
-                            <svg viewBox="0 0 100 100" width="22" height="22">
+                        <div class="perf-logo" style="display:flex; align-items:center; justify-content:center; background-color: #000;">
+                            <svg viewBox="5 30 90 55" width="26" height="26">
                                 <path fill="#ffffff" d="M60.2,56.5c-4.4,2.7-10.4,4.2-15.6,4.2c-5.5,0-8.9-1.3-11.4-3.5c-2.4-2.1-3.6-5.1-3.6-8.5 c0-7.8,6.8-12.2,18-12.2c4.4,0,8.2,1,10.6,2.2v-1.7c0-3.3-0.8-5.9-2.3-7.7c-2.1-2.4-5.6-3.8-10.1-3.8c-4.2,0-8.7,1.1-12.7,3.1 l-2.6-7.1c4.5-2.6,10.9-4,16.5-4c7.6,0,13.2,1.9,16.7,5.7c3.4,3.7,5,9,5,16.2v14.4c0,3.3,0.3,5.8,0.9,7.6h-7.6 C60.8,59.9,60.5,58,60.2,56.5z M59.6,43.2c-2.1-1.1-5.1-1.9-8.7-1.9c-6.8,0-10.4,2.3-10.4,6.7c0,2.1,0.8,3.9,2.4,5.1 c1.6,1.2,4.1,1.8,7.3,1.8c4.3,0,7.9-1.2,9.4-2.8V43.2z"/>
                                 <path fill="#FF9900" d="M12.9,75.4c12.2,8.9,27.5,13.6,43.5,13.6c16.2,0,32.3-5.2,45.4-14.6c2.7-1.9,3.7-6.2,1.9-9.4 c-2-3.1-6-3.9-9.1-1.9c-10.9,7.3-24.1,11.3-37.5,11.3c-13.1,0-25.9-3.7-36.4-10.9c-3.1-2.1-7.2-1.3-9.1,1.9 C9.7,68.4,10.7,72.6,12.9,75.4z"/>
                                 <path fill="#FF9900" d="M96.7,58.8c0.6-0.3,1.4-0.1,1.8,0.5l4.3,6.8c1,1.6,0.5,3.6-0.8,4.6c-6.2,4.8-13.3,8.4-21.4,10.7 c-2.6,0.7-5.1-1.2-5.5-3.8l-1.3-10.7c-0.3-2.6,1.4-4.8,3.9-4.8c1.3,0,2.5,0.4,3.5,0.9c3.9,1.7,7.7,3.3,11.2,4.7l1.4-2.3 C95.3,63,95.5,60.1,96.7,58.8z"/>
                             </svg>
                         </div>
                         <div class="perf-name-block">
-                            <h4 class="perf-name">Amazon (1997)</h4>
-                            <span class="perf-ticker">AMZN</span>
+                            <h4 class="perf-name" style="color: #000;">Amazon (1997)</h4>
+                            <span class="perf-ticker" style="color: #666;">AMZN</span>
                         </div>
                     </div>
-                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
-                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="3579400" data-comma="true">0</span>
+                    <div class="perf-value positive" style="font-weight: 700; font-size: 1.2rem; color: #10b981;">
+                        <span class="perf-prefix" style="color:#10b981">$</span><span class="perf-number" data-target="3579400" data-comma="true">0</span>
                     </div>
                 </div>
 
-                <div class="perf-row stagger-fade delay-3">
+                <div class="perf-row stagger-fade delay-3" style="border-bottom: 1px solid #eaeaea;">
                     <div class="perf-company">
                         <div class="perf-logo">
                             <svg viewBox="0 0 24 24" width="24" height="24" class="anim-logo ms-logo">
@@ -492,12 +498,12 @@
                             </svg>
                         </div>
                         <div class="perf-name-block">
-                            <h4 class="perf-name">Microsoft (1986)</h4>
-                            <span class="perf-ticker">MSFT</span>
+                            <h4 class="perf-name" style="color: #000;">Microsoft (1986)</h4>
+                            <span class="perf-ticker" style="color: #666;">MSFT</span>
                         </div>
                     </div>
-                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
-                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="5748800" data-comma="true">0</span>
+                    <div class="perf-value positive" style="font-weight: 700; font-size: 1.2rem; color: #10b981;">
+                        <span class="perf-prefix" style="color:#10b981">$</span><span class="perf-number" data-target="5748800" data-comma="true">0</span>
                     </div>
                 </div>
 
@@ -509,12 +515,12 @@
                             </svg>
                         </div>
                         <div class="perf-name-block">
-                            <h4 class="perf-name">Nvidia (1999)</h4>
-                            <span class="perf-ticker">NVDA</span>
+                            <h4 class="perf-name" style="color: #000;">Nvidia (1999)</h4>
+                            <span class="perf-ticker" style="color: #666;">NVDA</span>
                         </div>
                     </div>
-                    <div class="perf-value positive" style="font-weight: 600; font-size: 1.2rem;">
-                        <span class="perf-prefix" style="color:var(--color-primary)">$</span><span class="perf-number" data-target="8780400" data-comma="true">0</span>
+                    <div class="perf-value positive" style="font-weight: 700; font-size: 1.2rem; color: #10b981;">
+                        <span class="perf-prefix" style="color:#10b981">$</span><span class="perf-number" data-target="8780400" data-comma="true">0</span>
                     </div>
                 </div>
 
@@ -522,7 +528,66 @@
         </div>
     </section>
 
-    <!-- SECTION 2.5: NO SE TRATA DE COHETES (X-RAY) -->
+    <!-- SECTION 2: LO QUE LOS TITULARES NO DICEN -->
+    <section id="titulares" class="context section-charcoal border-top text-center" style="padding-top: 8rem; padding-bottom: 8rem;">
+        <div class="container fade-in-up">
+            <h2 class="section-title" style="margin-bottom: 5rem; font-size: clamp(2rem, 3.5vw, 3rem);">Lo que los Titulares No Dicen:<br><span class="text-highlight">4 Pilares del Monopolio que Cambiará la Historia.</span></h2>
+            
+            <div class="two-column-grid" style="align-items: center; gap: 4rem; text-align: left;">
+                <!-- Columna Izquierda: Texto Pilar 1 -->
+                <div class="context-text-block">
+                    <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; font-weight: 600;">1. El Potencial de Ganancia Asimétrica <span style="display: block; color: var(--color-muted); font-weight: 400; font-size: 1.3rem; margin-top: 0.3rem;">(El próximo "Efecto Tesla")</span></h3>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light);">SpaceX no es una startup buscando su lugar; sale a bolsa siendo una compañía valorada en 210.000 millones en el mercado privado. Sin embargo, su integración con la IA (xAI) y su dominio de las telecomunicaciones apuntan a que su capitalización de mercado podría igualar o superar a gigantes como Apple o Microsoft.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light); margin-top: 1.5rem;">Entrar en la fase de IPO es como comprar el terreno de Manhattan antes de que se construyeran los rascacielos. <span class="text-highlight" style="font-weight: 500;">El riesgo es asimétrico: el potencial de crecimiento (upside) es históricamente gigante en comparación con el capital de entrada.</span></p>
+                </div>
+                
+                <!-- Columna Derecha: Imagen Pilar 1 (Logo Animado) -->
+                <div class="image-container" style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem;">
+                    <style>
+                        @keyframes spacexLogoFloat {
+                            0% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 10px rgba(255,255,255,0.1)); }
+                            50% { transform: translateY(-12px) scale(1.03); filter: drop-shadow(0 0 30px rgba(255,255,255,0.8)); }
+                            100% { transform: translateY(0px) scale(1); filter: drop-shadow(0 0 10px rgba(255,255,255,0.1)); }
+                        }
+                    </style>
+                    <img src="spacex-logo.png" alt="SpaceX Logo" style="width: 100%; max-width: 400px; height: auto; animation: spacexLogoFloat 5s ease-in-out infinite;">
+                </div>
+            </div>
+
+            <!-- PILAR 2: EL MONOPOLIO ABSOLUTO -->
+            <div class="two-column-grid fade-in-up" style="align-items: center; gap: 4rem; text-align: left; margin-top: 8rem;">
+                <!-- Columna Izquierda: Imagen Pilar 2 -->
+                <div class="image-container" style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <img src="toll-gate.jpg" alt="SpaceX Monopoly" style="width: 100%; max-width: 500px; height: auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(176,155,113,0.2);">
+                </div>
+                
+                <!-- Columna Derecha: Texto Pilar 2 -->
+                <div class="context-text-block">
+                    <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; font-weight: 600;">2. El Monopolio Absoluto.</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light);">No estás invirtiendo en una empresa que 'compite' por el mercado; estás invirtiendo en el dueño del mercado. La NASA, el Pentágono, agencias europeas y empresas privadas... todos tienen que pasar por la caja registradora de SpaceX si quieren llegar al espacio.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light); margin-top: 1.5rem;">Literalmente, tienen un monopolio sobre la infraestructura de la órbita terrestre. <span class="text-highlight" style="font-weight: 500;">Es la definición perfecta de un control absoluto del mercado que nadie les puede quitar.</span></p>
+                </div>
+            </div>
+
+            <!-- PILAR 3: STARLINK -->
+            <div class="two-column-grid fade-in-up" style="align-items: center; gap: 4rem; text-align: left; margin-top: 8rem;">
+                <!-- Columna Izquierda: Texto Pilar 3 -->
+                <div class="context-text-block">
+                    <h3 style="font-size: 1.6rem; color: #fff; margin-bottom: 1.5rem; font-weight: 600;">3. Starlink: La Verdadera Máquina de Imprimir Billetes.</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light);">Starlink ha transformado a SpaceX de una empresa de "logística espacial" a la empresa de telecomunicaciones más grande y de más rápido crecimiento del mundo. Los cohetes son solo el camión de reparto. El verdadero negocio es la carga: Starlink.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light); margin-top: 1.5rem;">Una red de internet global que cobra suscripciones mensuales recurrentes en todos los continentes. Ya no dependen de que un gobierno les compre un cohete; ahora reciben miles de millones en ingresos recurrentes directos del consumidor, de ejércitos y de aerolíneas globales.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-light); margin-top: 1.5rem;">Si a esto le sumas su integración estratégica con la Inteligencia Artificial (xAI), <span class="text-highlight" style="font-weight: 500;">SpaceX dejó de ser una simple apuesta para convertirse en la infraestructura crítica de la próxima década.</span></p>
+                </div>
+
+                <!-- Columna Derecha: Imagen Pilar 3 -->
+                <div class="image-container" style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <img src="starlink.jpg" alt="Starlink Network" style="width: 100%; max-width: 500px; height: auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(176,155,113,0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: NO SE TRATA DE COHETES (X-RAY) -->
     <section id="verdadera-oportunidad" class="context section-dark border-top" style="overflow: hidden;">
         <div class="container container-medium fade-in-up">
             <div class="two-column-grid" style="align-items: center; gap: 4rem;">
@@ -550,14 +615,36 @@
                     <h2 class="section-title" style="font-size: 3rem; margin-bottom: 2rem; color: #fff; text-align: left;">No se trata de cohetes.</h2>
                     <p style="color: var(--color-gray); margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">Si crees que esta IPO se trata de lanzar cohetes a Marte o de internet satelital, te estás perdiendo la verdadera oportunidad. En realidad, SpaceX es la pieza clave del plan de Inteligencia Artificial de Elon Musk.</p>
                     <p style="color: var(--color-gray); margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.6;">Al unir su tecnología espacial con su nueva empresa de IA (xAI), Musk busca dominar esta industria a nivel mundial. Los analistas calculan que este movimiento generará una riqueza histórica de <span class="gold-pulse-text" style="color: #ffd700; font-weight: 700; display: inline-block; animation: goldPulse 3s infinite;">1.000 billones de dólares</span>.</p>
-                    <p class="text-emphasis" style="font-style: italic; border-left: 3px solid #ffd700; padding-left: 1rem; color: #fff; font-size: 1.2rem;">Para ponerlo en perspectiva: es dinero suficiente para hacer millonario a cada habitante del continente.</p>
+                    <p class="text-emphasis" style="font-style: italic; border-left: 3px solid #ffd700; padding-left: 1rem; color: #fff; font-size: 1.2rem;">Para ponerlo en perspectiva: es dinero suficiente para hacer millonario a cada habitante de Estados Unidos y Canadá juntos.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: CONTEXTO FINANCIERO -->
+    <!-- SECTION 4: MONOPOLIO ABSOLUTO -->
+    <section id="monopolio" class="context section-dark border-top" style="overflow: hidden;">
+        <div class="container fade-in-up">
+            <div class="two-column-grid" style="align-items: center; gap: 4rem;">
+                
+                <!-- Columna Izquierda: Texto -->
+                <div class="context-text-block text-left">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Monopolio absoluto.</h2>
+                    <p style="font-size: 1.3rem; font-weight: 500; color: #fff; margin-bottom: 2rem;">SpaceX ya no es una empresa de cohetes. Es un monopolio absoluto.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--color-gray);">Mientras las corporaciones tradicionales gastan miles de millones intentando alcanzar la órbita, SpaceX ya controla el monopolio del tráfico espacial comercial. Tienen a la NASA y a los gobiernos más poderosos del mundo como clientes cautivos gracias a su tecnología de cohetes reutilizables.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: var(--color-gray);">El "Caballo de Troya" que tiene a los fondos de cobertura desesperados por aumentar su cupo de acciones en la salida a bolsa es Starlink. Una red de internet satelital global que busca acaparar todo el mercado mundial posicionándose en los próximos años con precios por debajo de todos los competidores y destruyendo las fronteras de las telecomunicaciones tradicionales. Si a esto le sumas su integración estratégica con la Inteligencia Artificial (xAI), SpaceX dejó de ser una simple apuesta para convertirse en la infraestructura crítica de la próxima década.</p>
+                </div>
+
+                <!-- Columna Derecha: Imagen Starlink -->
+                <div class="image-container" style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <img src="starlink.jpg" alt="Starlink Satellites" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.05);">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CONTEXTO FINANCIERO -->
     <section id="contexto" class="context section-charcoal text-center border-top">
         <div class="container container-medium fade-in-up">
             <h2 class="section-title">Un Evento de Liquidez<br>Sin Precedentes.</h2>

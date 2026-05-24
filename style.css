@@ -481,6 +481,7 @@ body.no-scroll {
     margin-bottom: var(--spacing-md);
     color: #fff;
     letter-spacing: -0.02em;
+    text-transform: uppercase;
 }
 
 .context-text-block p {
