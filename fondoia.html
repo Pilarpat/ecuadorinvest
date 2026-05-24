@@ -23,12 +23,8 @@
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="container navbar-container">
-            <a href="index.html" class="navbar-logo">
-                <div class="pilar-monogram">
-                    <div class="pilar-bar pilar-bar-1"></div>
-                    <div class="pilar-bar pilar-bar-2"></div>
-                    <div class="pilar-bar pilar-bar-3"></div>
-                </div>
+            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="ei-logo-trans.png" alt="Ecuador Invest" style="height: 35px; width: auto;">
                 <span class="logo-text">ECUADOR INVEST</span>
             </a>
             <div class="menu-toggle">
@@ -36,11 +32,20 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#context" class="nav-link">Contexto</a></li>
-                <li class="nav-item"><a href="#approach" class="nav-link">Enfoque</a></li>
-                <li class="nav-item"><a href="#strategy" class="nav-link">Estrategia</a></li>
-                <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                        <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
             </ul>
         </div>
     </nav>
@@ -579,7 +584,10 @@
                 </a>
             </div>
             <div class="footer-bottom">
-                <div class="footer-logo">Ecuador Invest</div>
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="ei-logo-trans.png" alt="Ecuador Invest" style="height: 30px; width: auto;">
+                    <span class="logo-text">ECUADOR INVEST</span>
+                </div>
                 <div class="footer-links" style="display:flex;">
                     <span style="color:var(--color-gray);">Acceso Institucional</span>
                     <span style="color:var(--color-gray); margin:0 1rem;">•</span>

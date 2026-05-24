@@ -20,12 +20,8 @@
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="container navbar-container">
-            <a href="index.html" class="navbar-logo">
-                <div class="pilar-monogram">
-                    <div class="pilar-bar pilar-bar-1"></div>
-                    <div class="pilar-bar pilar-bar-2"></div>
-                    <div class="pilar-bar pilar-bar-3"></div>
-                </div>
+            <a href="index.html" class="navbar-logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="ei-logo-trans.png" alt="Ecuador Invest" style="height: 35px; width: auto;">
                 <span class="logo-text">ECUADOR INVEST</span>
             </a>
             <div class="menu-toggle">
@@ -33,10 +29,20 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#context" class="nav-link">Estrategia</a></li>
-                <li class="nav-item"><a href="#approach" class="nav-link">Autoridad</a></li>
-                <li class="nav-item"><a href="#implementation" class="nav-link">Implementación</a></li>
+                        <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
+                        <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
+                        <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
+                        <li><a href="oro.html" class="dropdown-item">ORO</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
             </ul>
         </div>
     </nav>
@@ -46,7 +52,7 @@
         <div class="hero-bg-overlay"></div>
         <div class="container two-column-grid hero-grid" style="padding-top: 160px; align-items: center;">
             <div class="hero-text fade-in-up hero-text-left-desktop">
-                <p class="hero-supporting">Ecuador Invest presenta</p>
+                <p class="hero-supporting">Para perfiles de riesgo bajo</p>
                 <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">Fondo de Inversión Warren Buffett:<br>El poder del interés compuesto.</h1>
                 <p class="hero-subheadline" style="max-width: 600px;">Accede al fondo que, durante sus 65 años de existencia, ha superado el 20% de rentabilidad anual promedio. Una de las alternativas más sólidas y atractivas para hacer crecer tus ahorros a largo plazo sin incurrir en riesgos innecesarios.</p>
                 <div class="hero-actions">
@@ -54,7 +60,7 @@
                 </div>
             </div>
             <div class="col-visual fade-in-up delay-1 hero-visual-center">
-                <div style="position: relative; z-index: 2; margin-top: 120px;">
+                <div class="hero-visual-wrapper" style="position: relative; z-index: 2; margin-top: 140px;">
                     <img src="berkshire-logo.png" alt="Berkshire Hathaway" style="position: absolute; bottom: 65%; left: 50%; transform: translateX(-50%); width: 340px; max-width: 80vw; z-index: -1; pointer-events: none;">
                     <div class="hero-animated-number" style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); backdrop-filter: blur(10px);">
                         <div style="font-size: clamp(4rem, 8vw, 7rem); font-weight: 700; line-height: 1; background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
@@ -76,6 +82,7 @@
                 .hero-text-left-desktop .hero-subheadline { margin-left: auto; margin-right: auto; }
                 .hero-text-left-desktop .hero-actions { justify-content: center; }
                 .hero-visual-center { text-align: center; }
+                .hero-visual-wrapper { margin-top: 180px !important; }
             }
         </style>
     </section>
@@ -253,7 +260,10 @@
                 </a>
             </div>
             <div class="footer-bottom">
-                <div class="footer-logo">Ecuador Invest</div>
+                <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="ei-logo-trans.png" alt="Ecuador Invest" style="height: 30px; width: auto;">
+                    <span class="logo-text">ECUADOR INVEST</span>
+                </div>
                 <div class="footer-links" style="display:flex;">
                     <span style="color:var(--color-gray);">Acceso Institucional</span>
                     <span style="color:var(--color-gray); margin:0 1rem;">•</span>
