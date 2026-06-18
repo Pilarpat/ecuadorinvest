@@ -202,90 +202,6 @@
                 width: 100%;
             }
         }
-
-        /* FLOATING WHATSAPP BUTTON */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--color-charcoal);
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: floatWhatsApp 3s ease-in-out infinite;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-5px) scale(1.05);
-            background-color: var(--color-navy);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-            color: #fff;
-        }
-
-        .whatsapp-float svg {
-            width: 32px;
-            height: 32px;
-            fill: currentColor;
-        }
-
-        @keyframes floatWhatsApp {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .whatsapp-tooltip {
-            position: fixed;
-            bottom: 52px; /* Aligned with button center vertically */
-            right: 110px; /* To the left of the button */
-            background: rgba(255, 255, 255, 0.9);
-            color: #000;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            z-index: 999;
-            pointer-events: none;
-            opacity: 1;
-            /* Fade out entirely after 10s and animation points right repeatedly */
-            animation: pointRight 1s infinite alternate, fadeOutTooltip 0.5s ease-in 10s forwards;
-        }
-
-        .whatsapp-tooltip::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -6px;
-            transform: translateY(-50%);
-            border-width: 6px 0 6px 6px;
-            border-style: solid;
-            border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
-        }
-
-        @keyframes pointRight {
-            0% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
-        }
-
-        @keyframes fadeOutTooltip {
-            0% { opacity: 1; }
-            100% { opacity: 0; visibility: hidden; }
-        }
-
         @keyframes goldPulse {
             0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.2); }
             50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.4); }
@@ -322,23 +238,6 @@
         .xray-auto-scan {
             animation: scanXray 8s ease-in-out infinite;
         }
-
-        @media (max-width: 900px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-            .whatsapp-float svg {
-                width: 26px;
-                height: 26px;
-            }
-            .whatsapp-tooltip {
-                bottom: 30px;
-                right: 80px;
-            }
-        }
     </style>
 </head>
 
@@ -353,7 +252,7 @@
             <div class="menu-toggle">
                 <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
-                        <ul class="nav-menu">
+                                    <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html" class="nav-link">INICIO</a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
@@ -363,6 +262,12 @@
                         <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
                         <li><a href="oro.html" class="dropdown-item">ORO</a></li>
                     </ul>
+                </li>
+                <li class="nav-item"><a href="plataforma.html" class="nav-link">PLATAFORMA</a></li>
+                <li class="nav-item"><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+            </ul>
                 </li>
                 <li class="nav-item"><a href="#servicios" class="nav-link">SERVICIOS</a></li>
                 <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
@@ -376,7 +281,7 @@
         <div class="container two-column-grid hero-grid" style="position:relative; z-index:2;">
             <div class="hero-text fade-in-up">
                 <p class="hero-supporting">SpaceX sale a bolsa</p>
-                <h1 class="hero-title" style="font-size:3.2rem; line-height: 1.2;">LA IPO MÁS GRANDE DE LA HISTORIA<br>YA TIENE FECHA.</h1>
+                <h1 class="hero-title" style="font-size:3.2rem; line-height: 1.2;">LA IPO MÁS GRANDE DE LA HISTORIA<br>YA DESPEGÓ.</h1>
                 <p class="hero-subheadline">Mientras el público espera, los gigantes de Wall Street ya están tomando posiciones. Accede antes con Ecuador Invest.</p>
 
                 <!-- Mobile Only Video & Countdown -->
@@ -415,6 +320,251 @@
         </div>
     </section>
 
+    <!-- SECTION: EXITOS DE SPACEX EN WALL STREET -->
+    <section id="exito-wallstreet" class="section-dark border-top" style="padding: 6rem 0; overflow: hidden; background: linear-gradient(180deg, #000000 0%, var(--color-charcoal) 100%);">
+        <div class="container two-column-grid fade-in-up" style="align-items: center; gap: 4rem;">
+            
+            <!-- Left Side: Text and Headings -->
+            <div class="col-text" style="max-width: 550px;">
+                <p class="hero-supporting" style="margin-bottom: 1rem;">Hito Financiero 2026</p>
+                <h2 class="section-title" style="font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1.5rem; text-align: left; text-transform: uppercase;">
+                    El Éxito Histórico de <span class="text-highlight">SpaceX</span> en Wall Street.
+                </h2>
+                <p style="font-size: 1.25rem; color: var(--color-light); font-weight: 500; margin-bottom: 2rem; line-height: 1.6;">
+                    El 12 de junio el mercado confirmó lo que anticipábamos. Ahora es el momento de crecer junto a ellos.
+                </p>
+                <div class="text-block" style="font-size: 1.05rem; line-height: 1.7; color: var(--color-muted);">
+                    <p style="margin-bottom: 1.5rem;">
+                        La salida a bolsa de SpaceX ya es un hecho histórico. El 12 de junio de 2026, la compañía demostró frente al mundo entero su solidez y el inmenso interés que genera a nivel global, superando todas las expectativas.
+                    </p>
+                    <p style="margin-bottom: 1.5rem;">
+                        Muchos inversores creen que la oportunidad termina el día que la empresa toca la campana en Wall Street. Sin embargo, para el <span class="text-emphasis">inversor inteligente</span>, este es recién el comienzo.
+                    </p>
+                    <p style="border-left: 2px solid var(--color-accent); padding-left: 1.2rem; font-style: italic; color: var(--color-light); margin-bottom: 0;">
+                        Una vez que pasa la euforia y la especulación de los primeros días, el precio de la acción se estabiliza. Es en este momento exacto, con la compañía ya consolidada públicamente, donde se abre la verdadera <span class="text-highlight" style="font-weight: 500;">oportunidad de inversión segura y a largo plazo</span>.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Right Side: Interactive Stock Widget -->
+            <div class="col-visual" style="display: flex; align-items: center; justify-content: center;">
+                <div class="stock-card-wrapper">
+                    <!-- Glassmorphism Stock Widget -->
+                    <div class="stock-glass-card">
+                        <!-- Widget Header -->
+                        <div class="stock-card-header">
+                            <div class="stock-info">
+                                <span class="stock-symbol">SPACE.X</span>
+                                <span class="stock-name">Space Exploration Technologies</span>
+                            </div>
+                            <div class="stock-badge">COMPLETADO</div>
+                        </div>
+                        
+                        <!-- Stock Value Display -->
+                        <div class="stock-value-section">
+                            <div class="stock-price">$240.00</div>
+                            <div class="stock-change">+14.2% <span class="arrow-up">▲</span></div>
+                        </div>
+                        
+                        <!-- Simulated Chart SVG -->
+                        <div class="stock-chart-container">
+                            <svg viewBox="0 0 300 120" class="stock-chart-svg">
+                                <defs>
+                                    <linearGradient id="chart-glow" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Glow Area under the line -->
+                                <path d="M 0,110 Q 50,90 100,95 T 200,60 T 300,10 L 300,120 L 0,120 Z" fill="url(#chart-glow)" />
+                                
+                                <!-- Main Stock Line -->
+                                <path class="chart-stroke-path" d="M 0,110 Q 50,90 100,95 T 200,60 T 300,10" fill="none" stroke="var(--color-accent)" stroke-width="3.5" stroke-linecap="round" />
+                                
+                                <!-- Pulse Dot at the end of the line -->
+                                <circle cx="300" cy="10" r="5" fill="#fff" />
+                                <circle cx="300" cy="10" r="10" fill="var(--color-accent)" class="pulse-dot" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Additional Metadata Info -->
+                        <div class="stock-metadata">
+                            <div class="meta-item">
+                                <span class="meta-label">FECHA DE SALIDA</span>
+                                <span class="meta-value">12 JUN 2026</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">MERCADO</span>
+                                <span class="meta-value">NASDAQ (PRE-MARKET)</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">TENDENCIA</span>
+                                <span class="meta-value" style="color: #10b981;">ALTA SOLIDEZ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Local Styling & Animation Keyframes -->
+        <style>
+            .stock-card-wrapper {
+                position: relative;
+                width: 100%;
+                max-width: 420px;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 2.5rem;
+                border-radius: 20px;
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+                overflow: hidden;
+            }
+            .stock-card-wrapper::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(176, 155, 113, 0.08) 0%, transparent 60%);
+                pointer-events: none;
+                animation: slowMove 15s linear infinite alternate;
+            }
+            @keyframes slowMove {
+                0% { transform: translate(-10%, -10%); }
+                100% { transform: translate(10%, 10%); }
+            }
+            .stock-glass-card {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .stock-card-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 1.2rem;
+            }
+            .stock-info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .stock-symbol {
+                font-family: var(--font-sans);
+                font-size: 1.25rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+                color: #fff;
+            }
+            .stock-name {
+                font-size: 0.75rem;
+                color: var(--color-muted);
+            }
+            .stock-badge {
+                font-size: 0.65rem;
+                letter-spacing: 1.5px;
+                color: var(--color-accent);
+                border: 1px solid rgba(176, 155, 113, 0.3);
+                padding: 0.4rem 0.8rem;
+                border-radius: 4px;
+                background: rgba(176, 155, 113, 0.05);
+                font-weight: 500;
+            }
+            .stock-value-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            .stock-price {
+                font-size: 2.5rem;
+                font-weight: 300;
+                color: #fff;
+                line-height: 1;
+                font-variant-numeric: tabular-nums;
+            }
+            .stock-change {
+                font-size: 1.1rem;
+                color: #10b981;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+            }
+            .stock-change .arrow-up {
+                font-size: 0.8rem;
+                animation: bounceUp 1.5s infinite alternate ease-in-out;
+            }
+            @keyframes bounceUp {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(-4px); }
+            }
+            .stock-chart-container {
+                width: 100%;
+                height: 120px;
+                margin: 0.5rem 0;
+            }
+            .stock-chart-svg {
+                width: 100%;
+                height: 100%;
+                overflow: visible;
+            }
+            .chart-stroke-path {
+                stroke-dasharray: 600;
+                stroke-dashoffset: 600;
+                animation: drawChart 3s forwards cubic-bezier(0.22, 1, 0.36, 1);
+            }
+            @keyframes drawChart {
+                to { stroke-dashoffset: 0; }
+            }
+            .pulse-dot {
+                opacity: 0;
+                animation: pulseGlow 2s infinite alternate ease-in-out 1s;
+                transform-origin: 300px 10px;
+            }
+            @keyframes pulseGlow {
+                0% { transform: scale(1); opacity: 0.8; }
+                100% { transform: scale(2.2); opacity: 0; }
+            }
+            .stock-metadata {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                padding-top: 1.2rem;
+                font-size: 0.75rem;
+            }
+            .meta-item {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            .meta-label {
+                color: var(--color-muted);
+                font-size: 0.6rem;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+            .meta-value {
+                color: #fff;
+                font-weight: 500;
+            }
+            
+            @media (max-width: 900px) {
+                .stock-card-wrapper {
+                    max-width: 100%;
+                    padding: 2rem 1.5rem;
+                }
+            }
+        </style>
+    </section>
+
     <!-- LUNAR IMAGE TRANSITION -->
     <div style="width: 100%; height: 35vh; min-height: 250px; background: url('luna.jpg') center 60% / cover no-repeat; position: relative; margin-top: -5vh; z-index: 10;">
         <!-- Gradient to blend the bottom of the image seamlessly into the section below -->
@@ -426,7 +576,7 @@
         <div class="container container-medium fade-in-up" style="position: relative; z-index: 2;">
             <h2 class="section-title" style="color: #000000; font-weight: 800; text-shadow: 0 2px 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,1);">Oportunidad única.</h2>
             <div class="context-text-block" style="color: #111111; font-weight: 500; text-shadow: 0 1px 3px rgba(255,255,255,0.8), 0 0 15px rgba(255,255,255,0.9);">
-                <p>El próximo 12 de junio, SpaceX realizará su salida a bolsa (IPO). Esto significa que, a partir de ese día, las acciones de la compañía estarán disponibles para el público.</p>
+                <p>El pasado 12 de junio de 2026, SpaceX realizó su salida a bolsa (IPO). Esto significa que, a partir de ese día, las acciones de la compañía ya están disponibles para el público.</p>
                 <p>Históricamente, invertir desde el primer día en un gigante tecnológico ha representado una oportunidad de crecimiento única.</p>
                 <p class="text-emphasis" style="margin-bottom: 3rem; color: #000000; font-weight: 800;">La clave del éxito siempre está en asegurar el lugar y entrar temprano.</p>
                 <p>Para entender el verdadero potencial de invertir en una salida a bolsa, la historia es el mejor ejemplo. A continuación, te mostramos en cuánto se habrían convertido hoy <span style="color: #000000; font-weight: 900;">$1,000 dólares invertidos</span> el día exacto en que estas empresas salieron al mercado.</p>
@@ -533,6 +683,151 @@
 
             </div>
         </div>
+    </section>
+
+    <!-- SECTION: POR QUE INVERTIR AHORA -->
+    <section id="por-que-ahora" class="section-dark border-top" style="padding: 8rem 0; background-color: var(--color-black);">
+        <div class="container fade-in-up">
+            <!-- Header -->
+            <div style="max-width: 800px; margin: 0 auto 5rem auto; text-align: center;">
+                <p class="hero-supporting" style="margin-bottom: 1rem;">Visión de Crecimiento</p>
+                <h2 class="section-title" style="font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1.5rem; text-transform: uppercase;">
+                    ¿Por qué invertir en <span class="text-highlight">SpaceX</span> ahora?
+                </h2>
+                <p style="font-size: 1.25rem; color: var(--color-muted); line-height: 1.6; font-weight: 400;">
+                    El momento en que las proyecciones se convierten en realidades.
+                </p>
+            </div>
+            
+            <!-- Introduction text -->
+            <div style="max-width: 850px; margin: 0 auto 4rem auto; text-align: center; font-size: 1.15rem; line-height: 1.8; color: var(--color-light);">
+                <p>
+                    Los mayores rendimientos en la bolsa de valores no se ganan en el primer día de cotización, sino acompañando el crecimiento de la empresa en los años siguientes. Piensa en el caso de <span class="text-highlight">Tesla</span>: los inversores que multiplicaron su capital no fueron solo los del primer día, sino aquellos que mantuvieron sus acciones mientras la empresa crecía y dominaba el mercado.
+                </p>
+                <p style="margin-top: 1.5rem; font-size: 1.05rem; color: var(--color-muted);">
+                    Gracias a su reciente y exitosa salida a bolsa, SpaceX acaba de recibir una inyección de capital gigantesca. Este dinero no es para probar nuevas ideas, es para ejecutar proyectos que ya son rentables y lideran el mundo:
+                </p>
+            </div>
+            
+            <!-- Three Columns / Cards Grid -->
+            <div class="why-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 5rem;">
+                
+                <!-- Card 1: Starlink -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Expansión de Starlink</h3>
+                    <p class="why-card-text">
+                        Llevar su internet satelital de alta velocidad a cada rincón del planeta, asegurando ingresos constantes mes a mes a nivel global.
+                    </p>
+                </div>
+                
+                <!-- Card 2: xAI -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Alianza con Inteligencia Artificial</h3>
+                    <p class="why-card-text">
+                        Desarrollar tecnología espacial y centros de datos en órbita junto a xAI, la empresa de Inteligencia Artificial avanzada de Elon Musk.
+                    </p>
+                </div>
+                
+                <!-- Card 3: Monopolio -->
+                <div class="why-card">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">El Monopolio del Espacio</h3>
+                    <p class="why-card-text">
+                        Seguir siendo la única compañía privada capaz de cumplir los contratos multimillonarios clave de la NASA y el gobierno de los Estados Unidos.
+                    </p>
+                </div>
+                
+            </div>
+            
+            <!-- Centered Callout Block -->
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(176, 155, 113, 0.05); border: 1px solid rgba(176, 155, 113, 0.2); padding: 3rem 2.5rem; border-radius: 12px; text-align: center; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);">
+                <p style="font-size: 1.25rem; line-height: 1.7; color: #fff; margin-bottom: 0; font-weight: 400;">
+                    Invertir hoy en <span class="text-highlight" style="font-weight: 600;">SpaceX</span> significa poner su dinero en la empresa tecnológica más sólida y con mayor proyección de nuestro tiempo, en el momento exacto en que tienen los recursos para dominar la próxima década.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Local CSS styling -->
+        <style>
+            .why-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                margin-bottom: 5rem;
+            }
+            .why-card {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 3rem 2.2rem;
+                border-radius: 12px;
+                text-align: left;
+                transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .why-card:hover {
+                transform: translateY(-8px);
+                border-color: var(--color-accent);
+                box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 15px rgba(176, 155, 113, 0.1);
+            }
+            .why-card-icon {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color-accent);
+                background: rgba(176, 155, 113, 0.05);
+                border-radius: 8px;
+                border: 1px solid rgba(176, 155, 113, 0.2);
+            }
+            .why-card-icon svg {
+                width: 26px;
+                height: 26px;
+            }
+            .why-card-title {
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: #fff;
+                margin-bottom: 0;
+            }
+            .why-card-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                color: var(--color-muted);
+                margin-bottom: 0;
+            }
+            
+            @media (max-width: 992px) {
+                .why-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 1.5rem !important;
+                }
+                .why-card {
+                    padding: 2.5rem 1.8rem;
+                }
+            }
+        </style>
     </section>
 
     <!-- SECTION 2: LO QUE LOS TITULARES NO DICEN -->
@@ -913,14 +1208,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <div class="whatsapp-tooltip">CONSULTA AHORA <span style="font-size: 1.1em; line-height: 1;">&rarr;</span></div>
-    <a href="https://wa.me/15559528657" class="whatsapp-float" target="_blank" aria-label="Contáctenos por WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.031 0C5.385 0 0 5.385 0 12.03c0 2.127.553 4.195 1.603 6.012L.15 23.315l5.413-1.42C7.324 22.887 9.646 23.444 12.031 23.444c6.645 0 12.031-5.386 12.031-12.031S18.677 0 12.031 0zm0 21.488c-1.802 0-3.568-.485-5.116-1.404l-.367-.217-3.8.997.997-3.805-.238-.378c-1.012-1.604-1.545-3.468-1.545-5.395 0-5.568 4.53-10.098 10.098-10.098s10.098 4.53 10.098 10.098-4.53 10.098-10.098 10.098zm5.542-7.575c-.304-.152-1.797-.887-2.076-.988-.278-.101-.481-.152-.684.152-.202.304-.785.988-.962 1.19-.177.203-.354.228-.658.076-2.03-.984-3.51-2.05-4.887-4.425-.177-.304-.02-.468.132-.62.137-.137.304-.354.456-.532.152-.177.202-.304.304-.506.101-.202.05-.38-.026-.532-.076-.152-.684-1.645-.937-2.253-.247-.594-.498-.513-.684-.522-.177-.01-.38-.01-.582-.01-.203 0-.532.076-.81.38-.278.304-1.064 1.038-1.064 2.532s1.089 2.937 1.24 3.14c.152.203 2.14 3.267 5.18 4.508 1.942.793 2.684.858 3.593.722.91-.137 2.937-1.2 3.342-2.362.405-1.162.405-2.155.284-2.363-.12-.208-.43-.335-.734-.487z"/>
-        </svg>
-    </a>
 
     <!-- Scripts -->
     <script src="main.js"></script>
