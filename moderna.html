@@ -98,6 +98,51 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* MOBILE ORDERING & RESPONSIVE LAYOUT OVERRIDES */
+        @media (max-width: 768px) {
+            /* Section 1: Hero Video first on Mobile */
+            .hero-spacex .hero-grid {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .hero-spacex .hero-grid .col-visual {
+                order: -1 !important;
+                margin-bottom: 2rem !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+            .hero-spacex .hero-grid .col-visual #hero-graphic-placeholder {
+                max-width: 100% !important;
+                margin: 0 auto;
+            }
+            .hero-spacex .hero-grid .hero-text {
+                order: 1 !important;
+                width: 100% !important;
+                text-align: left;
+            }
+
+            /* Section 3: Catalizador - Text ABOVE 4 Cards on Mobile */
+            #catalizador .two-column-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2.5rem !important;
+            }
+            #catalizador .two-column-grid > div:nth-child(2) {
+                order: 1 !important;
+                width: 100% !important;
+            }
+            #catalizador .two-column-grid > div:nth-child(1) {
+                order: 2 !important;
+                width: 100% !important;
+            }
+
+            /* Section 4: Tridente - Cards Full-Width & Stacked Vertically */
+            .thesis-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+        }
     </style>
 </head>
 
