@@ -27,14 +27,14 @@
             height: 100%;
         }
 
-        .info-premium-card {
+        .whatsapp-premium-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(145deg, rgba(176, 155, 113, 0.05) 0%, rgba(8, 12, 17, 0.8) 100%);
-            border: 1px solid rgba(176, 155, 113, 0.2);
+            background: linear-gradient(145deg, rgba(37, 211, 102, 0.05) 0%, rgba(8, 12, 17, 0.8) 100%);
+            border: 1px solid rgba(37, 211, 102, 0.2);
             border-radius: 16px;
             padding: 5rem 2rem;
             text-decoration: none;
@@ -44,29 +44,29 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        .info-premium-card::before {
+        .whatsapp-premium-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, rgba(176, 155, 113, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle at center, rgba(37, 211, 102, 0.15) 0%, transparent 70%);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
-        .info-premium-card:hover {
+        .whatsapp-premium-card:hover {
             transform: translateY(-10px);
-            border-color: var(--color-accent);
-            box-shadow: 0 30px 60px rgba(176, 155, 113, 0.15);
+            border-color: rgba(37, 211, 102, 0.5);
+            box-shadow: 0 30px 60px rgba(37, 211, 102, 0.15);
         }
 
-        .info-premium-card:hover::before {
+        .whatsapp-premium-card:hover::before {
             opacity: 1;
         }
 
-        .info-icon-wrapper {
+        .wa-icon-wrapper {
             width: 90px;
             height: 90px;
-            background: var(--color-accent);
+            background: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -74,32 +74,32 @@
             margin-bottom: 2.5rem;
             position: relative;
             z-index: 2;
-            box-shadow: 0 10px 30px rgba(176, 155, 113, 0.3);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
             animation: pulse-glow 2s infinite;
         }
 
         @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(176, 155, 113, 0.6); }
-            70% { box-shadow: 0 0 0 25px rgba(176, 155, 113, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(176, 155, 113, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .info-icon-wrapper svg {
+        .wa-icon-wrapper svg {
             width: 45px;
             height: 45px;
-            fill: #030303;
+            fill: #fff;
         }
 
-        .info-premium-card h3 {
+        .whatsapp-premium-card h3 {
             color: #fff;
             font-size: 2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
             position: relative;
             z-index: 2;
         }
 
-        .info-premium-card p {
+        .whatsapp-premium-card p {
             color: var(--color-gray);
             font-size: 1.1rem;
             position: relative;
@@ -114,7 +114,7 @@
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            .info-premium-card {
+            .whatsapp-premium-card {
                 padding: 4rem 1.5rem;
             }
         }
@@ -137,16 +137,13 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">INVERSIÓN ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="moderna.html" class="dropdown-item">MODERNA</a></li>
-                        <li><a href="terafab.html" class="dropdown-item">TERAFAB</a></li>
                         <li><a href="fondoia.html" class="dropdown-item">FONDO DE IA</a></li>
                         <li><a href="fondo2026.html" class="dropdown-item">FONDO BERKSHIRE</a></li>
                         <li><a href="spacex.html" class="dropdown-item">IPO SPACEX</a></li>
                         <li><a href="oro.html" class="dropdown-item">ORO</a></li>
                     </ul>
                 </li>
-                
-                <li class="nav-item"><a href="index.html#servicios" class="nav-link">SERVICIOS</a></li>
+                <li class="nav-item"><a href="#servicios" class="nav-link">SERVICIOS</a></li>
                 <li class="nav-item"><a href="apertura.html" class="nav-link">APERTURA</a></li>
                 <li class="nav-item"><a href="contacto.html" class="nav-link">CONTACTO</a></li>
             </ul>
@@ -200,9 +197,8 @@
                         </div>
 
                         <!-- FormSubmit Configuration -->
-                        <input type="hidden" name="_next" value="https://www.ecuador-invest.com/gracias.html">
                         <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com,correa.felipe.1899@gmail.com">
+                        <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com">
                         <input type="hidden" name="_subject" value="Nuevo Prospecto de Ecuador Invest - Contacto General">
                         <input type="text" name="_honey" style="display:none">
 
@@ -210,19 +206,17 @@
                     </form>
                 </div>
 
-                <!-- COLUMNA 2: SOPORTE INSTITUCIONAL -->
+                <!-- COLUMNA 2: WHATSAPP CARD -->
                 <div class="contact-info-col">
-                    <div class="info-premium-card">
-                        <div class="info-icon-wrapper">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    <a href="https://wa.me/15559528657" target="_blank" class="whatsapp-premium-card">
+                        <div class="wa-icon-wrapper">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.031 0C5.385 0 0 5.385 0 12.03c0 2.127.553 4.195 1.603 6.012L.15 23.315l5.413-1.42C7.324 22.887 9.646 23.444 12.031 23.444c6.645 0 12.031-5.386 12.031-12.031S18.677 0 12.031 0zm0 21.488c-1.802 0-3.568-.485-5.116-1.404l-.367-.217-3.8.997.997-3.805-.238-.378c-1.012-1.604-1.545-3.468-1.545-5.395 0-5.568 4.53-10.098 10.098-10.098s10.098 4.53 10.098 10.098-4.53 10.098-10.098 10.098zm5.542-7.575c-.304-.152-1.797-.887-2.076-.988-.278-.101-.481-.152-.684.152-.202.304-.785.988-.962 1.19-.177.203-.354.228-.658.076-2.03-.984-3.51-2.05-4.887-4.425-.177-.304-.02-.468.132-.62.137-.137.304-.354.456-.532.152-.177.202-.304.304-.506.101-.202.05-.38-.026-.532-.076-.152-.684-1.645-.937-2.253-.247-.594-.498-.513-.684-.522-.177-.01-.38-.01-.582-.01-.203 0-.532.076-.81.38-.278.304-1.064 1.038-1.064 2.532s1.089 2.937 1.24 3.14c.152.203 2.14 3.267 5.18 4.508 1.942.793 2.684.858 3.593.722.91-.137 2.937-1.2 3.342-2.362.405-1.162.405-2.155.284-2.363-.12-.208-.43-.335-.734-.487z"/>
                             </svg>
                         </div>
-                        <h3>Soporte Institucional</h3>
-                        <p style="margin-bottom: 1rem; font-size: 1.1rem; color: #fff; font-weight: 500;">contacto@ecuador-invest.com</p>
-                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: #fff; font-weight: 500;">+593 2 708 5340</p>
-                        <p style="font-size: 0.9rem; color: var(--color-gray); max-width: 90%;">Horario de atención: Lunes a Viernes de 09:00 a 18:00 (GMT-5)</p>
-                    </div>
+                        <h3>Atención Ejecutiva</h3>
+                        <p>Contacto directo, seguro y confidencial a través de nuestro canal verificado de WhatsApp.</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -244,5 +238,35 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Enviando...';
+                btn.disabled = true;
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = 'gracias.html';
+                    } else {
+                        alert('Ocurrió un error al enviar sus datos.');
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }
+                }).catch(error => {
+                    alert('Error de conexión.');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
+            });
+        }
+    </script>
 </body>
 </html>
