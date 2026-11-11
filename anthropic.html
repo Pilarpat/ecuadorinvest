@@ -135,6 +135,22 @@
   .closing .container { position: relative; }
   .closing h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.2rem; }
 
+  /* CONTACT FORM */
+  .form-container { max-width: 620px; margin: 3.5rem auto 0; background: var(--card); border: 1px solid var(--line); padding: 3rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,.4); text-align: left; }
+  .elegant-form .form-group { margin-bottom: 1.8rem; }
+  .elegant-form label { display: block; font-size: .8rem; color: var(--muted); margin-bottom: .6rem; text-transform: uppercase; letter-spacing: .08em; }
+  .elegant-form input, .elegant-form textarea, .elegant-form select { width: 100%; background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.1); color: var(--text); padding: 1.1rem; font-family: inherit; font-size: 1rem; border-radius: 10px; transition: border-color .3s, background .3s; }
+  .elegant-form input:focus, .elegant-form textarea:focus, .elegant-form select:focus { outline: none; border-color: var(--clay); background: rgba(255,255,255,.05); }
+  .phone-input-group { display: flex; gap: .5rem; }
+  .elegant-form .country-select { width: 30%; min-width: 100px; max-width: 130px; flex-shrink: 0; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill="%239aa1ae" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); background-repeat: no-repeat; background-position: calc(100% - 10px) center; padding-right: 2rem; }
+  .country-select option { background: var(--charcoal); color: var(--text); }
+  .elegant-form .phone-input-field { flex-grow: 1; }
+  .form-submit-btn { width: 100%; justify-content: center; border: 0; cursor: pointer; font-family: inherit; margin-top: .5rem; }
+  .form-submit-btn:disabled { opacity: .7; cursor: wait; }
+  .form-success-card { display: none; text-align: center; padding: 2rem 0; }
+  .form-success-card .success-icon { font-size: 3rem; color: var(--clay); margin-bottom: 1rem; }
+  @media (max-width: 768px) { .form-container { padding: 2rem 1.5rem; } .elegant-form input, .elegant-form textarea, .elegant-form select { font-size: 16px; padding: 1rem; } }
+
   footer { border-top: 1px solid var(--line); padding: 3.5rem 0; color: var(--gray); font-size: .82rem; }
   footer h4 { color: var(--muted); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
   footer p + p { margin-top: .8rem; }
@@ -156,6 +172,7 @@
       <li><a href="#ipo">Cómo funciona</a></li>
       <li><a href="#invertir">Invertir bien</a></li>
       <li><a href="#faq">Preguntas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
 </nav>
@@ -307,6 +324,62 @@
     </div>
   </section>
 
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container center">
+      <p class="eyebrow reveal">Contacto</p>
+      <h2 class="section-title reveal">¿Quieres más información sobre cómo obtener un lugar para invertir el día de salida?</h2>
+      <p class="lead reveal">Déjanos tus datos para obtener más información.</p>
+      <div class="form-container reveal">
+        <form id="contact-form" class="elegant-form" action="https://formsubmit.co/f5mediasocial@gmail.com" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre y Apellido</label>
+            <input type="text" id="name" name="nombre" required placeholder="Ej: Juan Pérez" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <div class="phone-input-group">
+              <select id="country-code" name="codigo_pais" required class="country-select" aria-label="Código de país">
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+598">🇺🇾 +598</option>
+                <option value="+56">🇨🇱 +56</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+57">🇨🇴 +57</option>
+                <option value="+51">🇵🇪 +51</option>
+                <option value="+595">🇵🇾 +595</option>
+                <option value="+591">🇧🇴 +591</option>
+                <option value="+52">🇲🇽 +52</option>
+                <option value="+593" selected>🇪🇨 +593</option>
+              </select>
+              <input type="tel" id="phone" name="telefono" required placeholder="9 1234 5678" class="phone-input-field" autocomplete="tel-national">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="mensaje" rows="4" required placeholder="Quisiera recibir más información sobre..."></textarea>
+          </div>
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_cc" value="octaviogswedencap@gmail.com">
+          <input type="hidden" name="_subject" value="Nuevo Prospecto - Ecuador Invest - Landing IPO Anthropic">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn btn-primary form-submit-btn" id="contact-submit">Enviar mensaje</button>
+        </form>
+        <div class="form-success-card" id="form-success">
+          <div class="success-icon">✓</div>
+          <h3 style="margin-bottom:.6rem">¡Gracias por escribirnos!</h3>
+          <p style="color:var(--muted)">Hemos recibido tus datos correctamente. Un asesor se pondrá en contacto contigo muy pronto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CLOSING -->
   <section class="closing">
     <div class="container">
@@ -362,6 +435,20 @@
     if (navigator.share) { try { await navigator.share(data); } catch {} }
     else { await navigator.clipboard.writeText(location.href); el('share-btn').textContent = '✓ Enlace copiado'; }
   };
+
+  // Formulario de contacto
+  const form = el('contact-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = el('contact-submit'), original = btn.innerHTML;
+    btn.innerHTML = 'Enviando...'; btn.disabled = true;
+    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(r => {
+        if (!r.ok) throw new Error();
+        form.style.display = 'none'; el('form-success').style.display = 'block';
+      })
+      .catch(() => { alert('Ocurrió un error al enviar tus datos. Inténtalo de nuevo.'); btn.innerHTML = original; btn.disabled = false; });
+  });
 </script>
 </body>
 </html>
